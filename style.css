@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background: #1b1b1b;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh; 
+    padding-top: 20px; 
+    flex-direction: column;
+}
+
+h1 {
+    color: gold;
+    text-align: center;
+}
+
+.container {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+}
+
+/* Hexagon Grid */
+.hex-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hexagon {
+    position: relative;
+    width: 120px;
+    height: 138.6px;
+    background-color: gold;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1b1b1b;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hexagon:hover {
+    background: linear-gradient(45deg, #ffdd00, #ffc107);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px 5px gold;
+}
+
+.hexagon span {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Animations */
+#hex1:hover {
+    animation: fade-in 0.5s ease;
+}
+
+#hex2:hover {
+    animation: spiral-in 0.7s ease;
+}
+
+#hex3:hover {
+    animation: tetris-drop 0.5s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes spiral-in {
+    from {
+        transform: rotate(0deg) scale(0.5);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes tetris-drop {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
